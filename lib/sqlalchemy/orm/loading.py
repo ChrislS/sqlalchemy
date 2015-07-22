@@ -402,7 +402,7 @@ def _instance_processor(
                 currentload = True
                 loaded_instance = True
 
-                instance = mapper.class_manager.new_instance()
+                instance = mapper.class_manager.new_instance(row)
 
                 dict_ = instance_dict(instance)
                 state = instance_state(instance)

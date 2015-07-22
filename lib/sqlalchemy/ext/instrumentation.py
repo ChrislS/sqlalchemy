@@ -324,7 +324,7 @@ class _ClassInstrumentationAdapter(ClassManager):
             return ClassManager.initialize_collection(self, key,
                                                       state, factory)
 
-    def new_instance(self, state=None):
+    def new_instance(self, row, state=None):
         instance = self.class_.__new__(self.class_)
         self.setup_instance(instance, state)
         return instance

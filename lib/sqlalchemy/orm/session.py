@@ -1725,7 +1725,7 @@ class Session(_SessionClassMethods):
                     "merge() with load=False option does not support "
                     "objects marked as 'dirty'.  flush() all changes on "
                     "mapped instances before merging with load=False.")
-            merged = mapper.class_manager.new_instance()
+            merged = mapper.class_manager.new_instance(None)
             merged_state = attributes.instance_state(merged)
             merged_state.key = key
             self._update_impl(merged_state)
@@ -1739,7 +1739,7 @@ class Session(_SessionClassMethods):
             merged = None
 
         if merged is None:
-            merged = mapper.class_manager.new_instance()
+            merged = mapper.class_manager.new_instance(None)
             merged_state = attributes.instance_state(merged)
             merged_dict = attributes.instance_dict(merged)
             new_instance = True

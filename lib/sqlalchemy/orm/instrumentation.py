@@ -308,7 +308,7 @@ class ClassManager(dict):
 
     # InstanceState management
 
-    def new_instance(self, state=None):
+    def new_instance(self, row, state=None):
         instance = self.class_.__new__(self.class_)
         if state is None:
             state = self._state_constructor(instance, self)
